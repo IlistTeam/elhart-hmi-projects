@@ -1,7 +1,7 @@
 param([string]$ProjectRoot=(Join-Path $PSScriptRoot 'SLM_Powder_Loader_DEMO'))
 $ErrorActionPreference='Stop'
 $compiler='C:\Program Files (x86)\KIP\ELHART HMI Soft 3.x\Macro\Compiler'
-$stage=Join-Path $env:TEMP 'slm_elhart_build'
+$stage=Join-Path $env:TEMP ('slm_elhart_build_'+[Guid]::NewGuid().ToString('N'))
 $project=(Resolve-Path -LiteralPath $ProjectRoot).Path
 New-Item -ItemType Directory -Path $stage -Force | Out-Null
 Copy-Item -LiteralPath (Join-Path $project 'demo_expanded.c') -Destination (Join-Path $stage 'demo.c') -Force

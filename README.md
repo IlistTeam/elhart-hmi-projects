@@ -22,6 +22,12 @@ $skill-installer Установи навык elhart-hmi-projects из https://gi
 [инструкции навыка](SKILL.md) и [native-format.md](references/native-format.md).
 ELHART HMI Soft и библиотеки производителя в этот репозиторий не входят.
 
+При подключённом [Elhart MCP](https://github.com/IlistTeam/elhart-hmi-mcp)
+основной путь создания и изменения — нативные операции редактора.
+Интеграция 0.5.0 и границы проверки описаны в
+[mcp-integration.md](references/mcp-integration.md). Навык сохраняет XML-,
+DTO- и регрессионные проверки; установка навыка сама по себе не подключает MCP.
+
 ## Что входит
 
 - `SKILL.md` — инструкции и выбор рабочего процесса.
