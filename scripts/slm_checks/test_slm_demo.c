@@ -28,6 +28,9 @@ int main(void){
  w[DRAFT+1]=65;w[DRAFT+3]=90;press(SAVECFG);assert(w[SAVED+1]==65&&w[SAVED+3]==50);
  press(MATERIALCHANGE);press(GASCHANGE);assert(w[DRAFT+6]&&w[DRAFT]==0);
  press(CALOPEN);press(CALNEXT);press(CALNEXT);press(CALNEXT);press(CALNEXT);assert(w[CALSTEP]==5&&w[CALRESULT]);
+ {unsigned short saved_log[96];memcpy(saved_log,w+RING,sizeof saved_log);
+  press(CALNEXT);press(CALNEXT);press(CALNEXT);
+  assert(w[CALSTEP]==5&&w[CALRESULT]&&!memcmp(saved_log,w+RING,sizeof saved_log));}
  resetdemo();press(START);ticks(6);press(DEMOFAULT);assert(w[ST]==TRIPPED&&!w[BLOWER]&&!w[GATE]);
  press(ACK);assert(w[FAULT]&&w[ST]==TRIPPED);press(START);assert(w[ST]==TRIPPED);
  press(DEMOFAULT);ticks(1);press(START);assert(w[ST]==CHECK);
