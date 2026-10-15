@@ -9,16 +9,15 @@
 Скопируйте в чат Codex на нужном компьютере:
 
 ```text
-$skill-installer Установи навык elhart-hmi-projects из https://github.com/IlistTeam/elhart-hmi-projects, используй ветку codex/elhart-mcp-integration. SKILL.md находится в корне репозитория; имя устанавливаемого навыка — elhart-hmi-projects. Установи вместе с scripts, references, agents и assets.
+$skill-installer Установи навык elhart-hmi-projects из https://github.com/IlistTeam/elhart-hmi-projects, используй ветку main. SKILL.md находится в корне репозитория; имя устанавливаемого навыка — elhart-hmi-projects. Установи вместе с scripts, references, agents и assets.
 ```
 
 Репозиторий публичный; доступ к приватному `IlistTeam/Skills` не требуется.
 После установки используйте `$elhart-hmi-projects`. Если навык не появился,
 перезапустите Codex.
 
-Указанная ветка содержит проверенную 15.10.2026 интеграцию MCP 0.5.0
-и исправления SLM; [PR №1](https://github.com/IlistTeam/elhart-hmi-projects/pull/1)
-подготовлен к проверке. После включения PR можно устанавливать main.
+Проверенная 15.10.2026 интеграция MCP 0.5.0 и исправления SLM входят
+в основную ветку. История изменений: [PR №1](https://github.com/IlistTeam/elhart-hmi-projects/pull/1).
 
 Целевая среда нативных проверок — Windows с установленным ELHART HMI Soft 3.x
 и Windows PowerShell 5.1/.NET Framework. Python-инструменты требуют Python 3.10+.

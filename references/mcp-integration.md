@@ -3,10 +3,10 @@
 Версия интеграции: MCP 0.5.0. Нативные подтверждения относятся к ELHART HMI
 Soft 3.0.15569.0. Исходники и установка:
 [IlistTeam/elhart-hmi-mcp](https://github.com/IlistTeam/elhart-hmi-mcp),
-[инструкции установки](https://github.com/IlistTeam/elhart-hmi-mcp/blob/feature/elhart-adaptation/docs/elhart-installation.md),
-[границы испытаний](https://github.com/IlistTeam/elhart-hmi-mcp/blob/feature/elhart-adaptation/docs/elhart-validation.md).
-Адаптация остаётся в разработке; экспериментальные инструменты не считай
-проверенными по одному наличию в каталоге.
+[инструкции установки](https://github.com/IlistTeam/elhart-hmi-mcp/blob/main/docs/elhart-installation.md),
+[границы испытаний](https://github.com/IlistTeam/elhart-hmi-mcp/blob/main/docs/elhart-validation.md).
+План адаптации выполнен для указанных версии и сценариев; экспериментальные
+инструменты не считай проверенными по одному наличию в каталоге.
 
 ## Соединение и работа с проектом
 
@@ -53,11 +53,11 @@ GUID устройства конкретен для проекта, Raw LW не 
 Для пустого индикатора на текущей странице проверен
 `canvas_configure_word_indicator`: LW с UInt16, равенство 0/1 и резервное
 ShowErrorState, три изображения 64×64, три графических/текстовых состояния,
-пустые подписи и квадратные bounds. Это подтверждение сохранения и сборки;
-реальную смену состояний проверяй отдельно. Для знакового числового поля
+пустые подписи и квадратные bounds. Смена трёх состояний подтверждена оператором
+в симуляторе. Для знакового числового поля
 согласуй NormalData.DataType и ReadAddress.Raw.DataType; проверено сохранение
-Int16, IsShowZero и ограничений −32768…32767. Эти поля ещё не подтверждают
-отображение крайних значений в симуляторе.
+Int16, IsShowZero и ограничений −32768…32767. Оператор подтвердил оба крайних
+значения и отклонение 32768/−32769. Для нового проекта повтори его приёмку.
 
 Для пустой картинки в Elhart проверен `fstudio_import_image`: native
 LoadFromFile задаёт PictureOrigin=File и сохраняет источник без ручного
@@ -115,4 +115,4 @@ Win32/ARM, DTO и C-регрессии дополняют эти ручные н
 Computer Use не получает кадр; операторская приёмка не выдаётся за его
 исправление. Точность монотонного секундомера, панель и PLC не подтверждены.
 Полный отчёт и границы:
-[итог Elhart MCP](https://github.com/IlistTeam/elhart-hmi-mcp/blob/feature/elhart-adaptation/docs/elhart-final-results.md).
+[итог Elhart MCP](https://github.com/IlistTeam/elhart-hmi-mcp/blob/main/docs/elhart-final-results.md).
